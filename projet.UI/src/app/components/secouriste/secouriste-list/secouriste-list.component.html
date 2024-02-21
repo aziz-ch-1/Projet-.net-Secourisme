@@ -1,0 +1,28 @@
+<div class="container my-5">
+    <h1 class="mb-3">secouriste</h1>
+<table class="table"*ngIf="secouristes && secouristes.length>0 ">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">Email</th>
+        <th scope="col">phone</th>
+        <th scope="col">Adress</th>
+        <th scope="col">    </th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let secouriste of secouristes">
+        <th scope="row">{{ secouriste.id }}</th>
+        <td>{{ secouriste.name }}</td>
+        <td>{{ secouriste.email }}</td>
+        <td>{{ secouriste.phone }}</td>
+        <td>{{ secouriste.adress }}</td>
+        <td><a [routerLink]="['/secouriste','edit',secouriste.id]">View</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf="!secouristes  ||secouristes.length<=0 ">No secouristes found</p>
+</div>
